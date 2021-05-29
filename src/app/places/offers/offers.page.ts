@@ -15,4 +15,8 @@ export class OffersPage implements OnInit {
   }
 
   ngOnInit() {}
+
+  onEdit(offerId: String) {
+    console.log("111");
+  }
 }
