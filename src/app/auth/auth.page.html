@@ -14,7 +14,8 @@
               <ion-label position="floating">E-Mail</ion-label>
               <ion-input
                 type="email"
-                ngModel
+                [(ngModel)]="auth.email"
+                ngControl="email"
                 name="email"
                 required
                 email
@@ -24,8 +25,10 @@
               <ion-label position="floating">Password</ion-label>
               <ion-input
                 ngModel
+                ngControl="password"
                 name="password"
                 required
+                [(ngModel)]="auth.password"
                 minlength="6"
                 type="password"
               ></ion-input>
@@ -47,7 +50,6 @@
             expand="block"
             color="primary"
             (click)="onLogin()"
-            *ngIf="!isLoading"
           >
             Login
           </ion-button>

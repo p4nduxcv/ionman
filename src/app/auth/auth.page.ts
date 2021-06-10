@@ -10,6 +10,11 @@ import { AuthService } from "./auth.service";
 })
 export class AuthPage implements OnInit {
   isLoading = false;
+
+  auth = {
+    email: "",
+    password: "",
+  };
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {}
@@ -22,8 +27,8 @@ export class AuthPage implements OnInit {
     }, 1500);
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form) {
     console.log("hit");
-    console.log(form);
+    console.log(form.value);
   }
 }
