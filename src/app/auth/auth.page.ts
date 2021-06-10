@@ -32,7 +32,10 @@ export class AuthPage implements OnInit {
   }
 
   onSubmit(form) {
-    console.log("hit");
-    console.log(form.value);
+    if (!form.valid) {
+      return;
+    }
+    const email = form.value.email;
+    const password = form.value.password;
   }
 }
