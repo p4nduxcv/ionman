@@ -10,7 +10,7 @@ import { AuthService } from "./auth.service";
 })
 export class AuthPage implements OnInit {
   isLoading = false;
-
+  isLogin = true;
   auth = {
     email: "",
     password: "",
@@ -25,6 +25,10 @@ export class AuthPage implements OnInit {
       this.isLoading = false;
       this.router.navigateByUrl("/places/tabs/discover");
     }, 1500);
+  }
+
+  onSwitchAuthMode() {
+    this.isLogin = !this.isLogin;
   }
 
   onSubmit(form) {
